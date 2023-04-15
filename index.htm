@@ -165,18 +165,18 @@
 				if(M===selck.options.length-1)U=U.reverse();
 				head.textContent=U.join('');
 			}
-			head.onclick=e=>{
+			/* head.onclick=e=>{
 				cop();
-			}
+			} */
 			selck.onchange=e=>{
 				M=selck.selectedIndex;
 				tren();
-				// cop();
+				cop();
 			}
 			txt.oninput=e=>{
 				head.textContent="";
 				if(txt.value)tren();
-				// cop();
+				cop();
 			};
 			M=selck.selectedIndex;
 			txt.value="So fancy";
