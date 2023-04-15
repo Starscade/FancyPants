@@ -23,8 +23,16 @@
 				text-align:center;
 				user-select:none;
 			}
+			body{
+				margin:0;
+			}
 			header{
 				font-size:2em;
+				top:50%;
+				transform:translate(-50%,-50%);
+			}header,nav{
+				left:50%;
+				position:fixed;
 			}header,select{
 				cursor:pointer;
 			}
@@ -32,40 +40,33 @@
 				background-color:var(--fg);
 				border:none;
 				color:var(--bg);
-				display:block;
 			}input,select{
 				border-radius:1em;
+				display:block;
 				font-family:inherit;
 				font-size:inherit;
 				outline:none;
 				padding:.5em;
 				text-align:center;
 			}
+			main{
+				background-image:radial-gradient(transparent,transparent,transparent,Gray);
+				height:100vh;
+			}
 			nav{
 				bottom:1em;
-				left:50%;
-				position:fixed;
 				transform:translateX(-50%);
 			}
 			select{
-				/* appearance:none; */
-				/* background-color:var(--bg); */
 				border:none;
-				color:inherit;
-				display:block;
+				/* color:inherit; */
 				margin:auto;
-			}
-			.daedcent{
-				left:50%;
-				position:fixed;
-				top:50%;
-				transform:translate(-50%,-50%);
 			}
 		</style>
 	</head>
 	<body>
 		<main>
-			<header class="daedcent"></header>
+			<header></header>
 			<nav>
 				<select>
 					<option selected>𝓒𝓾𝓻𝓼𝓲𝓿𝓮</option>
@@ -157,9 +158,9 @@
 				if(M===selck.options.length-1)U=U.reverse();
 				head.textContent=U.join('');
 			}
-			/* head.onclick=e=>{
+			head.onclick=e=>{
 				cop();
-			} */
+			}
 			selck.onchange=e=>{
 				M=selck.selectedIndex;
 				tren();
