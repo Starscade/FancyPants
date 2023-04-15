@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"oncontextmenu="return false">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport"content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
@@ -34,6 +34,7 @@
 				font-size:2em;
 				top:50%;
 				transform:translate(-50%,-50%);
+				user-select:text;
 			}header,nav{
 				left:50%;
 				position:fixed;
@@ -145,13 +146,10 @@
 			};
 			let M=0;
 			async function cop(){
-				const typ="text/plain";
-				const bob=new Blob([head.textContent],{type:typ});
-				const tex=[new ClipboardItem({[typ]:bob})];
-				navigator.clipboard.write(tex).then(()=>{
+				await navigator.clipboard.writeText(head.textContent).then(()=>{
 					console.log(head.textContent);
 				}).catch(err=>{
-					alert(err);
+					// alert(err);
 					console.error(err);
 				});
 			}
@@ -167,17 +165,22 @@
 				head.textContent=U.join('');
 			}
 			head.onclick=e=>{
+				const rang=new Range();
+				const S=window.getSelection();
+				S.removeAllRanges();
+				rang.selectNodeContents(head);
+				S.addRange(rang);
 				cop();
 			}
 			selck.onchange=e=>{
 				M=selck.selectedIndex;
 				tren();
-				cop();
+				// cop();
 			}
 			txt.oninput=e=>{
 				head.textContent="";
 				if(txt.value)tren();
-				cop();
+				// cop();
 			};
 			M=selck.selectedIndex;
 			txt.value="So fancy";
