@@ -88,6 +88,7 @@
 		<script>
 			'use strict';
 			const head=document.getElementsByTagName('header')[0];
+			// const main=document.getElementsByTagName('main')[0];
 			const selck=document.getElementsByTagName('select')[0];
 			const txt=document.getElementsByTagName('input')[0];
 			const tran={
@@ -153,6 +154,9 @@
 					console.error(err);
 				});
 			}
+			/* function rez(){
+				main.style.height=window.visualViewport.height+'px';
+			} */
 			function tren(){
 				let U=[...txt.value];
 				[...txt.value].forEach((a,i)=>{
@@ -177,6 +181,12 @@
 				tren();
 				// cop();
 			}
+			/* txt.onblur=()=>{
+				rez();
+			}
+			txt.onfocus=()=>{
+				rez();
+			} */
 			txt.oninput=e=>{
 				head.textContent="";
 				if(txt.value)tren();
