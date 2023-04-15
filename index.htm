@@ -3,7 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport"content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
+		<meta name="apple-mobile-web-app-capable"content="yes">
 		<link rel="icon"href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+		<link rel="apple-touch-icon"href="ico.png">
 		<title>𝓕𝓪𝓷𝓬𝔂 𝓟𝓪𝓷𝓽𝓼</title>
 		<style>
 			::selection{
@@ -151,9 +153,8 @@
 				const bob=new Blob([head.textContent],{type:typ});
 				const tex=[new ClipboardItem({[typ]:bob})];
 				navigator.clipboard.write(tex).then(()=>{
-					alert(head.textContent);
+					console.log(head.textContent);
 				}).catch(err=>{
-					alert(err);
 					console.error(err);
 				});
 			}
