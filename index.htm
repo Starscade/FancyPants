@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"oncontextmenu="return false">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
+		<link rel="icon"href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+		<title>𝓕𝓪𝓷𝓬𝔂 𝓟𝓪𝓷𝓽𝓼</title>
+		<style>
+			::selection{
+				background-color:var(--fg);
+				color:var(--bg);
+			}
+			:root{
+				--bg:#eee;
+				--fg:#333;
+				--pt:14pt;
+				background-color:var(--bg);
+				color:var(--fg);
+				font-family:monospace;
+				font-size:var(--pt);
+				scroll-behavior:smooth;
+				scrollbar-color:var(--fg) var(--bg);
+				text-align:center;
+				user-select:none;
+			}
+			article{
+				margin:auto;
+				max-width:80ch;
+				min-height:100%;
+			}
+			header{
+				font-size:2em;
+			}header,select{
+				cursor:pointer;
+			}
+			input{
+				background-color:var(--fg);
+				border:none;
+				color:var(--bg);
+				display:block;
+			}input,select{
+				border-radius:1em;
+				font-family:inherit;
+				font-size:inherit;
+				outline:none;
+				padding:.5em;
+				text-align:center;
+			}
+			nav{
+				bottom:1em;
+				left:50%;
+				position:fixed;
+				transform:translateX(-50%);
+			}
+			select{
+				/* appearance:none; */
+				/* background-color:var(--bg); */
+				border:none;
+				color:inherit;
+				display:block;
+				margin:auto;
+			}
+			.daedcent{
+				left:50%;
+				position:fixed;
+				top:50%;
+				transform:translate(-50%,-50%);
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<article>
+				<header class="daedcent"></header>
+				<nav>
+					<select>
+						<option selected>𝓒𝓾𝓻𝓼𝓲𝓿𝓮</option>
+						<option>𝕲𝖔𝖙𝖍𝖎𝖈</option>
+						<option>𝕆𝕦𝕥𝕝𝕚𝕟𝕖</option>
+						<option>卄|尺卂Ꮆ卂几卂</option>
+						<option>🅑🅤🅑🅑🅛🅔🅢</option>
+						<option>🄱🄾🅇</option>
+						<option>pǝʇɹǝʌuI</option>
+					</select>
+					<input placeholder="Type here!"type="text"autofocus>
+				</nav>
+			</article>
+		</main>
+		<script>
+			'use strict';
+			const head=document.getElementsByTagName('header')[0];
+			const selck=document.getElementsByTagName('select')[0];
+			const txt=document.getElementsByTagName('input')[0];
+			const tran={
+				"A":[..."𝓐𝕬𝔸卂🅐🅰∀"],
+				"B":[..."𝓑𝕭𝔹乃🅑🅱ꓭ"],
+				"C":[..."𝓒𝕮ℂ匚🅒🅲Ͻ"],
+				"D":[..."𝓓𝕯𝔻ᗪ🅓🅳ᗡ"],
+				"E":[..."𝓔𝕰𝔼乇🅔🅴Ǝ"],
+				"F":[..."𝓕𝕱𝔽千🅕🅵ᖵ"],
+				"G":[..."𝓖𝕲𝔾Ꮆ🅖🅶⅁"],
+				"H":[..."𝓗𝕳ℍ卄🅗🅷H"],
+				"I":[..."𝓘𝕴𝕀|🅘🅸I"],
+				"J":[..."𝓙𝕵𝕁ﾌ🅙🅹ᒋ"],
+				"K":[..."𝓚𝕶𝕂Ҝ🅚🅺ꓘ"],
+				"L":[..."𝓛𝕷𝕃ㄥ🅛🅻⅂"],
+				"M":[..."𝓜𝕸𝕄爪🅜🅼ꟽ"],
+				"N":[..."𝓝𝕹ℕ几🅝🅽N"],
+				"O":[..."𝓞𝕺𝕆ㄖ🅞🅾O"],
+				"P":[..."𝓟𝕻ℙ卩🅟🅿Ԁ"],
+				"Q":[..."𝓠𝕼ℚɊ🅠🆀Ꝺ"],
+				"R":[..."𝓡𝕽ℝ尺🅡🆁ꓤ"],
+				"S":[..."𝓢𝕾𝕊丂🅢🆂S"],
+				"T":[..."𝓣𝕿𝕋ㄒ🅣🆃ꓕ"],
+				"U":[..."𝓤𝖀𝕌ㄩ🅤🆄Ո"],
+				"V":[..."𝓥𝖁𝕍ᐯ🅥🆅Ʌ"],
+				"W":[..."𝓦𝖂𝕎山🅦🆆Ϻ"],
+				"X":[..."𝓧𝖃𝕏乂🅧🆇X"],
+				"Y":[..."𝓨𝖄𝕐ㄚ🅨🆈⅄"],
+				"Z":[..."𝓩𝖅ℤ乙🅩🆉Z"],
+				"a":[..."𝓪𝖆𝕒卂ⓐ🄰ɐ"],
+				"b":[..."𝓫𝖇𝕓乃ⓑ🄱q"],
+				"c":[..."𝓬𝖈𝕔匚ⓒ🄲ɔ"],
+				"d":[..."𝓭𝖉𝕕ᗪⓓ🄳p"],
+				"e":[..."𝓮𝖊𝕖乇ⓔ🄴ǝ"],
+				"f":[..."𝓯𝖋𝕗千ⓕ🄵ⅎ"],
+				"g":[..."𝓰𝖌𝕘Ꮆⓖ🄶ƃ"],
+				"h":[..."𝓱𝖍𝕙卄ⓗ🄷ɥ"],
+				"i":[..."𝓲𝖎𝕚|ⓘ🄸ᴉ"],
+				"j":[..."𝓳𝖏𝕛ﾌⓙ🄹ɾ"],
+				"k":[..."𝓴𝖐𝕜Ҝⓚ🄺ʞ"],
+				"l":[..."𝓵𝖑𝕝ㄥⓛ🄻ʅ"],
+				"m":[..."𝓶𝖒𝕞爪ⓜ🄼ɯ"],
+				"n":[..."𝓷𝖓𝕟几ⓝ🄽u"],
+				"o":[..."𝓸𝖔𝕠ㄖⓞ🄾o"],
+				"p":[..."𝓹𝖕𝕡卩ⓟ🄿d"],
+				"q":[..."𝓺𝖖𝕢Ɋⓠ🅀b"],
+				"r":[..."𝓻𝖗𝕣尺ⓡ🅁ɹ"],
+				"s":[..."𝓼𝖘𝕤丂ⓢ🅂s"],
+				"t":[..."𝓽𝖙𝕥ㄒⓣ🅃ʇ"],
+				"u":[..."𝓾𝖚𝕦ㄩⓤ🅄n"],
+				"v":[..."𝓿𝖛𝕧ᐯⓥ🅅ʌ"],
+				"w":[..."𝔀𝖜𝕨山ⓦ🅆ʍ"],
+				"x":[..."𝔁𝖝𝕩乂ⓧ🅇x"],
+				"y":[..."𝔂𝖞𝕪ㄚⓨ🅈ʎ"],
+				"z":[..."𝔃𝖟𝕫乙ⓩ🅉z"]
+			};
+			let M=0;
+			function cop(){
+				const typ="text/plain";
+				const bob=new Blob([head.textContent],{type:typ});
+				const tex=[new ClipboardItem({[typ]:bob})];
+				navigator.clipboard.write(tex).then(()=>{
+					console.log(head.textContent);
+				}).catch(err=>{
+					console.error(err);
+				});
+			}
+			function tren(){
+				let U=[...txt.value];
+				[...txt.value].forEach((a,i)=>{
+					if(a in tran)U[i]=tran[a][M];
+				});
+				if(M===selck.options.length-1)U=U.reverse();
+				head.textContent=U.join('');
+			}
+			head.onclick=e=>{
+				cop();
+			}
+			selck.onchange=e=>{
+				M=selck.selectedIndex;
+				tren();
+				// cop();
+			}
+			txt.oninput=e=>{
+				head.textContent="";
+				if(txt.value)tren();
+				// cop();
+			};
+			M=selck.selectedIndex;
+			txt.value="Good Morning";
+			tren();
+			txt.value="";
+			// cop();
+		</script>
+	</body>
+</html>
