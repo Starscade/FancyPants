@@ -151,6 +151,7 @@
 				navigator.clipboard.write(tex).then(()=>{
 					console.log(head.textContent);
 				}).catch(err=>{
+					alert(err);
 					console.error(err);
 				});
 			}
@@ -159,7 +160,10 @@
 				[...txt.value].forEach((a,i)=>{
 					if(a in tran)U[i]=tran[a][M];
 				});
-				if(M===selck.options.length-1)U=U.reverse();
+				if(M===selck.options.length-1){
+					const punk={'.':'°',',':"'","'":',','"':',,','!':'¡','?':'¿'};
+					U=[...U.reverse().join('').replaceAll(/[\.°,'"\!\?]/g,r=>punk[r])];
+				}
 				head.textContent=U.join('');
 			}
 			head.onclick=e=>{
