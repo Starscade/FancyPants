@@ -8,7 +8,7 @@
 		<link rel="apple-touch-icon"href="ico.png">
 		<title>𝓕𝓪𝓷𝓬𝔂 𝓟𝓪𝓷𝓽𝓼</title>
 		<style>
-			@font-face {
+			@font-face{
 				font-family:'Deja';
 				src:url('deja.ttf');
 			}
@@ -146,8 +146,8 @@
 				"z":[..."𝔃𝖟𝕫乙ⓩ🅉z"]
 			};
 			let M=0;
-			async function cop(){
-				await navigator.clipboard.writeText(head.textContent).then(()=>{
+			function cop(){
+				navigator.clipboard.writeText(head.textContent).then(()=>{
 					console.log(head.textContent);
 				}).catch(err=>{
 					// alert(err);
@@ -157,7 +157,7 @@
 			/* function rez(){
 				main.style.height=window.visualViewport.height+'px';
 			} */
-			function tren(){
+			function trent(){
 				let U=[...txt.value];
 				[...txt.value].forEach((a,i)=>{
 					if(a in tran)U[i]=tran[a][M];
@@ -178,7 +178,7 @@
 			}
 			selck.onchange=e=>{
 				M=selck.selectedIndex;
-				tren();
+				trent();
 				cop();
 			}
 			/* txt.onblur=()=>{
@@ -189,12 +189,12 @@
 			} */
 			txt.oninput=e=>{
 				head.textContent="";
-				if(txt.value)tren();
+				if(txt.value)trent();
 				cop();
 			};
 			M=selck.selectedIndex;
 			txt.value="fancypants";
-			tren();
+			trent();
 			txt.value="";
 		</script>
 	</body>
