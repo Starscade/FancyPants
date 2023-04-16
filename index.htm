@@ -17,9 +17,11 @@
 				color:var(--bg);
 			}
 			:root{
-				--bg:#eee;
-				--fg:#333;
+				--ax:Orange;
+				--bg:DodgerBlue;
+				--fg:#eee;
 				--pt:14pt;
+				--shad:2px 2px 0 Black;
 				background-color:var(--bg);
 				color:var(--fg);
 				font-family:'Deja',monospace;
@@ -32,6 +34,7 @@
 			}
 			header{
 				font-size:2em;
+				text-shadow:var(--shad);
 				top:50%;
 				transform:translate(-50%,-50%);
 				user-select:text;
@@ -42,9 +45,11 @@
 				cursor:pointer;
 			}
 			input{
-				background-color:var(--fg);
+				background-color:var(--ax);
 				border:none;
+				box-shadow:var(--shad);
 				color:var(--bg);
+				font-weight:bold;
 			}input,select{
 				border-radius:1em;
 				display:block;
@@ -55,7 +60,7 @@
 				text-align:center;
 			}
 			main{
-				background-image:radial-gradient(transparent,transparent,transparent,Gray);
+				background-image:radial-gradient(transparent,RebeccaPurple);
 				height:100vh;
 			}
 			nav{
@@ -63,6 +68,7 @@
 				transform:translateX(-50%);
 			}
 			select{
+				background-color:transparent;
 				border:none;
 				color:inherit;
 				margin:auto;
@@ -82,7 +88,7 @@
 					<option>🄱🄾🅇</option>
 					<option>pǝʇɹǝʌuI</option>
 				</select>
-				<input placeholder="Type here!"type="text"autofocus>
+				<input placeholder="Type here!"spellcheck="false"type="text"autofocus>
 			</nav>
 		</main>
 		<script>
